@@ -42,8 +42,8 @@ If you want to run the pipeline tests locally:
 
 ```Bash
 # Clone the repository
-git clone [https://github.com/tu_usuario/tu_repositorio.git](https://github.com/tu_usuario/tu_repositorio.git)
-cd tu_repositorio
+git clone [https://github.com/IvanCGCA/api-automation-ci.git](https://github.com/IvanCGCA/api-automation-ci.git)
+cd api-automation-ci
 
 # Activate virtual environment and install dependencies
 python -m venv venv
