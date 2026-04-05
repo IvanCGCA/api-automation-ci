@@ -1,28 +1,60 @@
-# 🚀 API Automation + CI/CD Pipeline (GitHub Actions)
+# 🚀 API Automation & CI/CD Pipeline (GitHub Actions)
 
-Este proyecto implementa un flujo de **Integración Continua (CI)** profesional. No solo automatiza las pruebas de una API, sino que garantiza que cada cambio en el código sea validado automáticamente en la nube antes de ser aceptado.
+[![CI Status](https://img.shields.io/badge/build-passing-brightgreen?logo=github-actions)](https://github.com/tu_usuario/tu_repositorio/actions)
 
-## 🎯 Objetivo del Proyecto
-Demostrar la capacidad de orquestar pruebas automatizadas en entornos efímeros (contenedores de Linux) utilizando **GitHub Actions**, asegurando que el "build" del software sea estable en todo momento.
+## 📝 Project Overview
+This repository implements a professional **Continuous Integration (CI)** workflow. It goes beyond localized test execution by orchestrating automated API tests within ephemeral cloud environments (Linux containers). The primary goal is to ensure code quality, build stability, and validate every code change automatically before it is integrated into the main branch.
 
-## 🛠️ Tecnologías Utilizadas
-* **Lenguaje:** Python 3.12
+## 🛠️ Tech Stack & CI/CD Tooling
+* **Language:** Python 3.12
 * **Testing Framework:** Pytest
-* **API Client:** Requests
-* **CI/CD Tool:** GitHub Actions (Workflows en YAML)
-* **OS de Ejecución:** Ubuntu Latest (Cloud)
+* **HTTP Client:** Requests
+* **CI/CD Orchestration:** GitHub Actions (YAML Workflows)
+* **Execution Environment:** Ubuntu Latest (GitHub Hosted Runner)
 
-## 🏗️ Estructura del Pipeline
-El flujo de trabajo (`main.yml`) realiza los siguientes pasos automáticamente en cada `push`:
-1. **Checkout:** Descarga el código fuente en un servidor virtual.
-2. **Setup:** Configura el entorno de Python 3.12.
-3. **Dependencies:** Instala todas las librerías necesarias desde `requirements.txt`.
-4. **Execution:** Corre la suite de pruebas y genera un reporte de éxito o fallo.
+## 🏗️ CI/CD Pipeline Architecture
+The workflow (`main.yml`) automatically triggers on every `push` and `pull_request`, executing the following stages:
+1. **Checkout:** Fetches the repository source code into the virtual runner.
+2. **Setup Environment:** Provisions the Python 3.12 runtime.
+3. **Dependency Management:** Installs all required libraries defined in `requirements.txt`.
+4. **Automated Execution:** Triggers the Pytest suite and outputs the build status.
 
-## 🧪 Pruebas Ejecutadas
-- **Validación de Status Codes:** Asegura que los endpoints principales respondan correctamente (HTTP 200).
-- **Integridad de JSON:** Verifica que la estructura de los datos devueltos coincida con las reglas de negocio.
-- **Pruebas de Contrato:** Validación de IDs y tipos de datos en la respuesta de la API.
+## 🧪 Testing Scope
+The automated suite focuses on critical backend validation:
+* **Status Code Validation:** Ensures endpoints respond accurately (e.g., HTTP 200 OK, 404 Not Found).
+* **JSON Integrity Verification:** Validates that the returned data structures comply with defined business rules.
+* **Contract Testing:** Strictly validates data types, schema integrity, and object IDs in the API responses.
 
----
-*Proyecto desarrollado por **Ivan Vega** - QA Backend Engineer*
+## 📂 Project Structure
+```text
+api-cicd-automation/
+├── .github/
+│   └── workflows/
+│       └── main.yml       # GitHub Actions CI/CD configuration file
+├── tests/
+│   └── test_api.py        # Pytest scripts targeting the API
+├── requirements.txt       # Python dependencies
+└── README.md
+```
+
+🚀 Getting Started (Local Execution)
+If you want to run the pipeline tests locally:
+
+```Bash
+# Clone the repository
+git clone [https://github.com/tu_usuario/tu_repositorio.git](https://github.com/tu_usuario/tu_repositorio.git)
+cd tu_repositorio
+
+# Activate virtual environment and install dependencies
+python -m venv venv
+# Windows: .\venv\Scripts\activate | Mac/Linux: source venv/bin/activate
+pip install -r requirements.txt
+
+# Run tests locally
+pytest -v
+```
+
+Linkedin: www.linkedin.com/in/ivan-vega-porras
+
+
+CI/CD & QA Engineered by Iván Vega Porras
